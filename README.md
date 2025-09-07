@@ -21,10 +21,10 @@
 Если команды не находятся — нужно добавить в `PATH` путь к папке bin.
 
 Примерный путь к Maven:  
-C:\Program Files\JetBrains\<ваша версия IDE>\plugins\maven\lib\maven3\bin
+C:\Program Files\JetBrains\\<ваша версия IDE>\plugins\maven\lib\maven3\bin
 
 Примерный путь к JDK:  
-C:\Users\<user>\.jdks\<ваша версия JDK>\bin
+C:\Users\<user>\.jdks\\<ваша версия JDK>\bin
 
 **Шаг 1. Создаём простой Java-проект в IntelliJ IDEA (без Maven)**
 
