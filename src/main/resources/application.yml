@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: demo-application
+server:
+  port: 8080
+greeting:
+  text: "Hello BAS!"
+  int: 2303
