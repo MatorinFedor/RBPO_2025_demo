@@ -1,0 +1,448 @@
+{
+	"info": {
+		"_postman_id": "ed23cead-0049-4b12-83d0-3e604d41402b",
+		"name": "РБПО Практика 2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13859013"
+	},
+	"item": [
+		{
+			"name": "БКС2301",
+			"item": [
+				{
+					"name": "GET-Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students?name=student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "student1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"student1\",\r\n    \"email\": \"student1@mail.ru\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students/by-name/student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"by-name",
+								"student1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "БКС2302",
+			"item": [
+				{
+					"name": "GET-Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students?name=student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "student1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"student1\",\r\n    \"email\": \"student1@mail.ru\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students/by-name/student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"by-name",
+								"student1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "БКС2303",
+			"item": [
+				{
+					"name": "GET-Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students?name=student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "student1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"student1\",\r\n    \"email\": \"student1@mail.ru\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students/by-name/student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"by-name",
+								"student1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "БАС2301",
+			"item": [
+				{
+					"name": "GET-Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students?name=student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "student1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"student1\",\r\n    \"email\": \"student1@mail.ru\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students/by-name/student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"by-name",
+								"student1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "БАС2302",
+			"item": [
+				{
+					"name": "GET-Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students?name=student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "student1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"student1\",\r\n    \"email\": \"student1@mail.ru\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students/by-name/student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"by-name",
+								"student1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "БАС2303",
+			"item": [
+				{
+					"name": "GET-Student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students?name=student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "student1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"student1\",\r\n    \"email\": \"student1@mail.ru\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/students",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-Student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/students/by-name/student1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"students",
+								"by-name",
+								"student1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
