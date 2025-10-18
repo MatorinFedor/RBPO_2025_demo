@@ -1,7 +1,17 @@
 spring:
   application:
     name: "demo-application"
-
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo_db
+    username: ${JDBC_USER}
+    password: ${JDBC_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  sql:
+    init:
+      mode: always
 server:
   port: 8080
 
