@@ -6,9 +6,9 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class Group {
+public class GroupDto {
     @NotBlank
     private String name;
-    private List<Student> students;
-    private List<Course> courses;
+    private List<StudentDto> studentDtos;
+    private List<CourseDto> cours;
 }

@@ -1,6 +1,17 @@
 spring:
   application:
     name: demo-application
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo_db
+    username: ${PG_USER}
+    password: ${PG_PASS}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  sql:
+    init:
+      mode: always
 server:
   port: 8080
 greeting:
