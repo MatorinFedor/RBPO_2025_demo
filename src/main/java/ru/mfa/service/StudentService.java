@@ -1,25 +1,42 @@
 package ru.mfa.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.mfa.model.Student;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.transaction.annotation.Transactional;
+import ru.mfa.entity.CourseEntity;
+import ru.mfa.entity.GroupEntity;
+import ru.mfa.entity.StudentEntity;
+import ru.mfa.model.StudentDto;
+import ru.mfa.repository.CourseRepository;
+import ru.mfa.repository.GroupRepository;
+import ru.mfa.repository.StudentRepository;
 
 @Service
+@RequiredArgsConstructor
 public class StudentService {
-    private final Map<String, Student> students = new HashMap<>();
+    private final StudentRepository studentRepository;
+    private final GroupRepository groupRepository;
+    private final CourseRepository courseRepository;
 
-    public Student getStudent(String name) {
-        return students.get(name);
+    public StudentEntity getStudent(String name) {
+        return studentRepository.findByName(name);
     }
 
-    public Student addStudent(Student student) {
-        students.put(student.getName(), student);
-        return getStudent(student.getName());
+    @Transactional
+    public StudentEntity addStudent(StudentDto studentDto) {
+        GroupEntity group = groupRepository.findByName(studentDto.getGroup());
+        CourseEntity course = courseRepository.findByName(studentDto.getAdditionalCourse());
+
+        StudentEntity studentEntity = new StudentEntity();
+        studentEntity.setName(studentDto.getName());
+        studentEntity.setEmail(studentDto.getEmail());
+        studentEntity.setGroup(group);
+        studentEntity.setAdditionalCourse(course);
+        return studentRepository.save(studentEntity);
     }
 
+    @Transactional
     public void removeStudent(String name) {
-        students.remove(name);
+        studentRepository.deleteByName(name);
     }
 }
