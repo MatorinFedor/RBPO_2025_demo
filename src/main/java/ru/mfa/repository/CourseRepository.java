@@ -7,7 +7,7 @@ import ru.mfa.entity.CourseEntity;
 import java.util.UUID;
 
 @Repository
-public interface CourserRepository
+public interface CourseRepository
         extends JpaRepository<CourseEntity, UUID> {
 
     CourseEntity findByName(String name);

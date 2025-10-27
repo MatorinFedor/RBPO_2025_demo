@@ -7,39 +7,36 @@ import ru.mfa.entity.CourseEntity;
 import ru.mfa.entity.GroupEntity;
 import ru.mfa.entity.StudentEntity;
 import ru.mfa.model.StudentDto;
-import ru.mfa.repository.CourserRepository;
-import ru.mfa.repository.GroupRepository;
 import ru.mfa.repository.StudentRepository;
+import ru.mfa.util.MappingUtils;
 
 @Service
 @RequiredArgsConstructor
 public class StudentService {
+
+    private final GroupService groupService;
+    private final CourseService courseService;
     private final StudentRepository studentRepository;
-    private final GroupRepository groupRepository;
-    private final CourserRepository courserRepository;
+    private final MappingUtils mapping;
 
     public StudentEntity getStudent(String name) {
         return studentRepository.findByName(name);
     }
 
     @Transactional
-    public StudentEntity addStudent(StudentDto studentDto) {
-        GroupEntity group = groupRepository.findByName(studentDto.getGroup());
+    public StudentEntity addStudent(StudentDto dto) {
+        GroupEntity group = groupService.findByName(dto.getGroup());
         CourseEntity course = null;
-        if (studentDto.getAdditionalCourse() != null) {
-            course = courserRepository.findByName(
-                    studentDto.getAdditionalCourse());
+        if (dto.getAdditionalCourse() != null || !dto.getAdditionalCourse().isBlank()) {
+            course = courseService.findByName(dto.getAdditionalCourse());
         }
-        StudentEntity student = new StudentEntity();
-        student.setName(studentDto.getName());
-        student.setEmail(studentDto.getEmail());
-        student.setGroup(group);
-        student.setAdditionalCourse(course);
-        return studentRepository.save(student);
+        StudentEntity entity = mapping.toEntity(dto, group, course);
+        return studentRepository.save(entity);
     }
 
     @Transactional
     public void removeStudent(String name) {
         studentRepository.deleteByName(name);
     }
+
 }

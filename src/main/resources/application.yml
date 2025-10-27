@@ -3,8 +3,8 @@ spring:
     name: "demo-application"
   datasource:
     url: jdbc:postgresql://localhost:5432/demo_db
-    username: ${JDBC_USER}
-    password: ${JDBC_PASSWORD}
+    username: ${PG_USER}
+    password: ${PG_PASS}
   jpa:
     hibernate:
       ddl-auto: none
