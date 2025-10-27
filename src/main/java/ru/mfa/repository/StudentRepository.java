@@ -13,9 +13,9 @@ public interface StudentRepository
 
     StudentEntity findByName(String name);
 
-    @Query(value = """
-            SELECT * FROM students WHERE email = :email
-            """, nativeQuery = true)
+    @Query(value = "SELECT * FROM students WHERE email = :email", nativeQuery = true)
     StudentEntity findByEmail(String email);
+
+    void deleteByName(String name);
 
 }

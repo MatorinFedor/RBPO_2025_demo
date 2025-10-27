@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS students
     additional_course_id UUID REFERENCES courses (id)
 );
 
--- Если группе нужны много курсов (many-to-many):
+-- many-to-many:
 CREATE TABLE IF NOT EXISTS group_courses
 (
     group_id  UUID NOT NULL REFERENCES groups (id) ON DELETE CASCADE,

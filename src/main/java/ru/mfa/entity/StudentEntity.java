@@ -30,6 +30,6 @@ public class StudentEntity {
     private GroupEntity group;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "additional_course_id")
     private CourseEntity additionalCourse;
+
 }

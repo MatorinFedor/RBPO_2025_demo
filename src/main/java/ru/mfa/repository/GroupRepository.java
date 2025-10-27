@@ -11,4 +11,5 @@ public interface GroupRepository
         extends JpaRepository<GroupEntity, UUID> {
 
     GroupEntity findByName(String name);
+
 }

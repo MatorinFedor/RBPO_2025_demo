@@ -9,12 +9,11 @@ public class HelloController {
     @Value("${greeting.text}")
     private String greetingText;
 
-    @Value("${greeting.int}")
-    private int greetingInt;
+    @Value("${greeting.int1}")
+    private int num;
 
-    @GetMapping("/hello")
+    @GetMapping("/welcome")
     public String hello() {
-        return greetingText + greetingInt;
+        return greetingText + num;
     }
-
 }

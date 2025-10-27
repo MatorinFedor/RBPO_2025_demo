@@ -21,11 +21,12 @@ public class CourseEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true,  nullable = false)
     private String name;
 
     private String description;
 
     @ManyToMany(mappedBy = "courses")
     private List<GroupEntity> groups;
+
 }

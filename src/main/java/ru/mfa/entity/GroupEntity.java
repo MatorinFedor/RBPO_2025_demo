@@ -24,7 +24,9 @@ public class GroupEntity {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "group",
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+            orphanRemoval = true)
     private List<StudentEntity> students;
 
     @ManyToMany
@@ -34,5 +36,4 @@ public class GroupEntity {
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
     private List<CourseEntity> courses;
-
 }

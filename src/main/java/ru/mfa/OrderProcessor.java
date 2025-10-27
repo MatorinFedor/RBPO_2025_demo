@@ -1,13 +1,14 @@
 package ru.mfa;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OrderProcessor {
-    private final NotificationService notifier;
+    @Qualifier("mail_notification")
+    private NotificationService notificationService;
 
-    public OrderProcessor(NotificationService notifier) {
-        this.notifier = notifier;
+    public OrderProcessor(NotificationService service) {
+        this.notificationService = service;
     }
-
 }
