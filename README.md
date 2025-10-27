@@ -218,3 +218,6 @@ mvn exec:java
 * [Транзакции](https://docs.spring.io/spring-data/jpa/reference/jpa/transactions.html)
 * [Курс и шпаргалка по SQL](https://proglib.io/p/sql-cheat-sheet)
 
+# Задание 4
+
+
