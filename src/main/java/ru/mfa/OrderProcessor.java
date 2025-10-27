@@ -1,17 +1,14 @@
 package ru.mfa;
 
-import lombok.Getter;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OrderProcessor {
-    @Getter
-    private final String test = "test";
-    private final NotificationService notificationService;
+    @Qualifier("mail_notification")
+    private NotificationService notificationService;
 
-    public OrderProcessor(
-            NotificationService notificationService) {
-        this.notificationService = notificationService;
+    public OrderProcessor(NotificationService service) {
+        this.notificationService = service;
     }
-
 }
