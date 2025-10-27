@@ -3,67 +3,50 @@ package ru.mfa.controller;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Size;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
-import ru.mfa.entity.StudentEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import ru.mfa.model.StudentDto;
 import ru.mfa.service.StudentService;
-
-import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
+import ru.mfa.util.MappingUtils;
 
 @RestController
-@RequestMapping("/students")
 @RequiredArgsConstructor
-@Validated
+@RequestMapping("/students")
 public class StudentController {
 
     private final StudentService studentService;
+    private final MappingUtils mappingUtils;
 
     @GetMapping
     public ResponseEntity<StudentDto> getStudent(
-            @RequestParam(required = true) @Size(min = 3, max = 255) String name) {
-        return ResponseEntity
-                .ok()
-                .body(toDto(studentService.getStudent(name)));
+            @RequestParam @Size(min = 3, max = 255) String name) {
+        return ResponseEntity.ok()
+                .body(mappingUtils.toDto(studentService.getStudent(name)));
     }
 
     @PostMapping
-    public ResponseEntity<StudentDto> createStudent(
-            @Valid @RequestBody StudentDto studentDto) {
-        try {
-            return ResponseEntity
-                    .status(CREATED)
-                    .header("X-USER-ID", studentDto.getEmail())
-                    .body(toDto(studentService.addStudent(studentDto)));
-        } catch (Exception ex) {
-            return ResponseEntity
-                    .status(INTERNAL_SERVER_ERROR)
-                    .body(null);
-        }
-
+    public ResponseEntity<StudentDto> addStudent(
+            @Valid @RequestBody StudentDto student,
+            @RequestHeader(value = "X-USER-ID", required = false) String id) {
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .header("X-USER-ID", student.getEmail())
+                .body(mappingUtils.toDto(studentService.addStudent(student)));
     }
 
     @DeleteMapping("/by-name/{name}")
-    public ResponseEntity<Void> deleteStudent(
+    public ResponseEntity<Void> removeStudent(
             @PathVariable String name) {
         studentService.removeStudent(name);
         return ResponseEntity.noContent().build();
     }
 
-    private StudentDto toDto(StudentEntity studentEntity) {
-        StudentDto studentDto = new StudentDto();
-        studentDto.setName(studentEntity.getName());
-        studentDto.setEmail(studentEntity.getEmail());
-        if (studentEntity.getGroup()!=null) {
-            studentDto.setGroup(studentEntity.getGroup().getName());
-        }
-        if (studentEntity.getAdditionalCourse() != null) {
-            studentDto.setAdditionalCourse(
-                    studentEntity.getAdditionalCourse().getName());
-        }
-
-        return studentDto;
-    }
 }

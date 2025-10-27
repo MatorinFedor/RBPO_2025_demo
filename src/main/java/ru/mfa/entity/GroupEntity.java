@@ -13,8 +13,8 @@ import java.util.UUID;
 @Table(name = "groups")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class GroupEntity {
 
     @Id
@@ -24,15 +24,16 @@ public class GroupEntity {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "group")
+    @OneToMany(mappedBy = "group",
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+            orphanRemoval = true)
     private List<StudentEntity> students;
 
     @ManyToMany
     @JoinTable(
-            name = "group_corses",
+            name = "group_courses",
             joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
     private List<CourseEntity> courses;
-
 }

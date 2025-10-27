@@ -8,13 +8,13 @@ import ru.mfa.entity.StudentEntity;
 import java.util.UUID;
 
 @Repository
-public interface StudentRepository extends JpaRepository<StudentEntity, UUID> {
-
-    @Query(value = "SELECT * FROM students WHERE email = :email",
-    nativeQuery = true)
-    StudentEntity findByEmail(String email);
+public interface StudentRepository
+        extends JpaRepository<StudentEntity, UUID> {
 
     StudentEntity findByName(String name);
+
+    @Query(value = "SELECT * FROM students WHERE email = :email", nativeQuery = true)
+    StudentEntity findByEmail(String email);
 
     void deleteByName(String name);
 

@@ -12,18 +12,18 @@ import java.util.UUID;
 @Table(name = "students")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class StudentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true,  nullable = false)
     private String name;
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true,  nullable = false)
     private String email;
 
     @ManyToOne(fetch = FetchType.LAZY)
