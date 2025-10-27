@@ -211,3 +211,10 @@ mvn exec:java
       * Какие основные сущности используются для этого;
       * Какие операции умеет выполнять ваш сервис.
 
+### Дополнительные материалы к заданию 3: 
+* [Документация по JPA в Spring](https://docs.spring.io/spring-data/jpa/reference/jpa.html)
+* [Отношения между таблицами](https://www.baeldung.com/spring-data-rest-relationships)
+* [Типы каскадных операций](https://www.baeldung.com/jpa-cascade-types)
+* [Транзакции](https://docs.spring.io/spring-data/jpa/reference/jpa/transactions.html)
+* [Курс и шпаргалка по SQL](https://proglib.io/p/sql-cheat-sheet)
+
