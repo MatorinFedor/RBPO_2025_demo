@@ -9,6 +9,6 @@ import java.util.List;
 public class GroupDto {
     @NotBlank
     private String name;
-    private List<StudentDto> studentDtos;
-    private List<CourseDto> cours;
+    private List<StudentDto> students;
+    private List<CourseDto> courses;
 }

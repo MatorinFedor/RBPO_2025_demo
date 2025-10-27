@@ -1,6 +1,6 @@
 spring:
   application:
-    name: demo-application
+    name: "demo-application"
   datasource:
     url: jdbc:postgresql://localhost:5432/demo_db
     username: ${PG_USER}
@@ -14,6 +14,8 @@ spring:
       mode: always
 server:
   port: 8080
+
 greeting:
   text: "Hello Spring!"
-  int: 2301
+  text1: "asdasf"
+  int1: 1234
