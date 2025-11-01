@@ -27,3 +27,10 @@ VALUES ('11111111-1111-1111-1111-111111111111', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaa
        ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb'),
        ('22222222-2222-2222-2222-222222222222', 'cccccccc-cccc-cccc-cccc-cccccccccccc')
 ON CONFLICT DO NOTHING;
+
+--Пользователи для демонстрации, в свой проект так их добавлять нельзя
+INSERT INTO users (name, email, password, role)
+VALUES ('user', 'user@example.com',
+        '$2a$12$AqRzpqy6BIl4iNTkNGqBHuda9b/wvfxSwqOWDJz7hZoZA3fd4uuri', 'USER'),
+       ('admin', 'admin@example.com',
+        '$2a$12$AqRzpqy6BIl4iNTkNGqBHuda9b/wvfxSwqOWDJz7hZoZA3fd4uuri', 'ADMIN');
