@@ -1,10 +1,7 @@
 package ru.mfa.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import ru.mfa.model.enums.ApplicationUserRole;
 
 import java.util.UUID;
@@ -13,12 +10,13 @@ import java.util.UUID;
 @Table(name = "users")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ApplicationUser {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue
     private UUID id;
 
     private String name;
@@ -37,5 +35,4 @@ public class ApplicationUser {
     private boolean isCredentialsExpired;
 
     private boolean isDisabled;
-
 }

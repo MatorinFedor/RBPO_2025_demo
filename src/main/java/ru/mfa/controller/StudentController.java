@@ -36,7 +36,7 @@ public class StudentController {
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('modify')")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<StudentDto> addStudent(
             @Valid @RequestBody StudentDto student,
             @RequestHeader(value = "X-USER-ID", required = false) String id) {
@@ -46,7 +46,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/by-name/{name}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('modify')")
     public ResponseEntity<Void> removeStudent(
             @PathVariable String name) {
         studentService.removeStudent(name);

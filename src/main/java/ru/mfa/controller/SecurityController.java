@@ -8,10 +8,8 @@ import java.util.Map;
 
 @RestController
 public class SecurityController {
-
     @GetMapping("/csrf-token")
     public Map<String, String> csrf(CsrfToken token) {
         return Map.of("token", token.getToken());
     }
-
 }
