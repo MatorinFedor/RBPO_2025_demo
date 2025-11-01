@@ -33,4 +33,5 @@ INSERT INTO users (name, email, password, role)
 VALUES ('user', 'user@example.com',
         '$2a$12$AqRzpqy6BIl4iNTkNGqBHuda9b/wvfxSwqOWDJz7hZoZA3fd4uuri', 'USER'),
        ('admin', 'admin@example.com',
-        '$2a$12$AqRzpqy6BIl4iNTkNGqBHuda9b/wvfxSwqOWDJz7hZoZA3fd4uuri', 'ADMIN');
+        '$2a$12$AqRzpqy6BIl4iNTkNGqBHuda9b/wvfxSwqOWDJz7hZoZA3fd4uuri', 'ADMIN')
+ON CONFLICT DO NOTHING;
