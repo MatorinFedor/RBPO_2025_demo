@@ -19,3 +19,8 @@ greeting:
   text: "Hello Spring!"
   text1: "asdasf"
   int1: 1234
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

@@ -1,3 +1,16 @@
+CREATE TABLE IF NOT EXISTS users
+(
+    id                     UUID PRIMARY KEY      DEFAULT gen_random_uuid(),
+    name                   VARCHAR(255),
+    email                  VARCHAR(255) NOT NULL UNIQUE,
+    password               VARCHAR(255) NOT NULL,
+    role                   VARCHAR(32)  NOT NULL CHECK (role IN ('USER', 'ADMIN')),
+    is_account_expired     BOOLEAN      NOT NULL DEFAULT FALSE,
+    is_account_locked      BOOLEAN      NOT NULL DEFAULT FALSE,
+    is_credentials_expired BOOLEAN      NOT NULL DEFAULT FALSE,
+    is_disabled            BOOLEAN      NOT NULL DEFAULT FALSE
+);
+
 CREATE TABLE IF NOT EXISTS groups
 (
     id   UUID PRIMARY KEY DEFAULT gen_random_uuid(),
